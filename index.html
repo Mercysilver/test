@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="我的第一个公开网页，欢迎来到我的互联网小站。" />
+  <title>我的第一个网站</title>
+  <style>
+    :root { color-scheme: dark; --bg:#0b1020; --card:#151e32; --line:#2c3854; --text:#f3f5fb; --muted:#aebad0; --accent:#81a8ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; font-family:system-ui,-apple-system,"Microsoft YaHei",sans-serif; background:radial-gradient(ellipse 80% 55% at 50% 0%,#202e53 0%,transparent 75%),var(--bg); color:var(--text); }
+    main { max-width:820px; margin:auto; padding:80px 24px 48px; }
+    .eyebrow { display:inline-block; border:1px solid #3a507f; padding:9px 14px; border-radius:30px; color:#bcd0ff; font-size:13px; letter-spacing:.04em; }
+    h1 { font-size:clamp(36px,7vw,60px); line-height:1.15; letter-spacing:-.04em; margin:24px 0; }
+    h1 span { color:var(--accent); }
+    .lead { max-width:580px; color:var(--muted); font-size:18px; line-height:1.85; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin:30px 0 56px; }
+    .button { display:inline-block; background:#7ca6ff; color:#09152b; font-weight:700; text-decoration:none; padding:12px 20px; border-radius:12px; border:0; cursor:pointer; font:inherit; }
+    .button.secondary { color:#e0eaff; background:#1f2b47; border:1px solid #3b4b6c; }
+    .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .card { border:1px solid var(--line); background:rgba(21,30,50,.88); padding:24px; border-radius:18px; }
+    .card .emoji { font-size:26px; }
+    .card h2 { font-size:18px; margin:16px 0 8px; }
+    .card p { color:var(--muted); font-size:14px; line-height:1.8; margin:0; }
+    footer { color:#8896b1; margin-top:58px; font-size:13px; }
+    @media (max-width:650px) {main{padding-top:50px}.cards{grid-template-columns:1fr}.lead{font-size:16px}}
+  </style>
+</head>
+<body>
+  <main>
+    <div class="eyebrow">🌐 MY FIRST WEBSITE</div>
+    <h1>你好，互联网。<br><span>这是我的第一个网站。</span></h1>
+    <p class="lead">这是我亲手发布的网页。只要你能看到它，就说明我的网站已经成功上线！以后我可以在这里分享自己的想法、项目和研究成果。</p>
+    <div class="actions">
+      <button class="button" type="button" id="hello">点我打个招呼 👋</button>
+      <a class="button secondary" href="https://github.com" target="_blank" rel="noopener noreferrer">探索 GitHub ↗</a>
+    </div>
+    <section class="cards" aria-label="网站内容">
+      <article class="card"><div class="emoji">👤</div><h2>关于我</h2><p>在这里介绍自己：你的兴趣、学习经历，以及正在探索的事情。</p></article>
+      <article class="card"><div class="emoji">💻</div><h2>我的项目</h2><p>展示你的编程作品，或者正在进行的人工智能研究项目。</p></article>
+      <article class="card"><div class="emoji">📝</div><h2>我的记录</h2><p>把学习笔记、研究思考和生活观察记录下来。</p></article>
+    </section>
+    <footer>© <span id="year"></span> 我的第一个网站 · 使用 HTML / CSS / JavaScript 制作</footer>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('hello').addEventListener('click', function () {
+      alert('你好！欢迎来到我的网站 🎉');
+    });
+  </script>
+</body>
+</html>
